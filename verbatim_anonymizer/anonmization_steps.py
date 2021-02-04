@@ -17,7 +17,7 @@ class Languages(str, Enum):
 
 LANGUAGE_TO_MODEL = {
     Languages.de: "de_core_news_lg",
-    Languages.en: "en_core_web_lg",
+    Languages.en: "en_core_web_trf",
 }
 
 
@@ -100,8 +100,7 @@ class EntityAnonymizerStep(AnonymizationStep):
             self.exclude = {}
 
         self.nlp = spacy.load(LANGUAGE_TO_MODEL[language])
-        merge_ents = self.nlp.create_pipe("merge_entities")
-        self.nlp.add_pipe(merge_ents)
+        self.nlp.add_pipe("merge_entities")
 
     def __call__(self, text):
         doc = self.nlp(text)
