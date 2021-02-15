@@ -24,13 +24,13 @@ using [SpaCy](https://spacy.io/) and Regex
 
 To anonymize a file stored at path `${IN_PATH}` with text column(s) `${TEXT_COLS}` using the default settings, execute
 
-```python3 -m verbatim_anonymization.anonymize_verbatim_file ${IN_PATH} ${OUT_PATH} ${TEXT_COLUMNS}```
+```python3 -m verbatim_anonymizer.anonymize_verbatim_file ${IN_PATH} ${OUT_PATH} ${TEXT_COLUMNS}```
 
 (set `${OUT_PATH}` to the path where the anonymized file should be written to).
 If your file has multiple text columns to analyze, set `${TEXT_COLUMNS}` to be a list of text columns separated by
 spaces and surrounded by apostrophes, for example:
 
-```python3 -m verbatim_anonymization.anonymize_verbatim_file ${IN_PATH} ${OUT_PATH} "Text_1 Text_2""```
+```python3 -m verbatim_anonymizer.anonymize_verbatim_file ${IN_PATH} ${OUT_PATH} "Text_1 Text_2""```
 
 (Column names are expected to not contain any spaces).
 
@@ -39,7 +39,7 @@ _language_ py also passing the argument `--language` with the appropriate langua
 please consult the spacy documentation: https://spacy.io/models/en
 
 To see the full list of options available, execute
-```python3 -m verbatim_anonymization.anonymize_verbatim_file -h```
+```python3 -m verbatim_anonymizer.anonymize_verbatim_file -h```
 
 
 ## Tests
